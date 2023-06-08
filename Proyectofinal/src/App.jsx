@@ -1,12 +1,25 @@
+import React from "react";
+import {Space} from "antd";
+import "./App.css"
+import AppHeader from "./Components/AppHeader/"
+import SideMenu from "./Components/SideMenu/"
+import PageContent from "./Components/PageContent/"
+import AppFooter from "./Components/AppFooter/"
 
 
 function App() {
 
 
   return (
-    <>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias fugit tenetur doloribus possimus facere iste molestiae. Nihil commodi enim explicabo culpa expedita, at obcaecati magnam quaerat aliquid aperiam! Architecto, nihil.</p>
-    </>
+  
+    <div className="App">
+    <AppHeader/>
+    <Space>
+      <SideMenu></SideMenu>
+      <PageContent></PageContent>
+    </Space>
+    <AppFooter/>
+    </div>
   )
 }
 
