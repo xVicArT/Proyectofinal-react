@@ -14,7 +14,7 @@ function App() {
   
     <div className="App">
     <AppHeader/>
-    <Space>
+    <Space className="SideMenuAndPageContent">
       <SideMenu></SideMenu>
       <PageContent></PageContent>
     </Space>
