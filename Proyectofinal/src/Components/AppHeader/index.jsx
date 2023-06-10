@@ -4,81 +4,81 @@ import { useEffect, useState } from "react";
 import { getComments, getOrders } from "../../API";
 
 function AppHeader() {
-  const [comments, setComments] = useState([]);
-  const [orders, setOrders] = useState([]);
-  const [commentsOpen, setCommentsOpen] = useState(false);
-  const [notificationsOpen, setNotificationsOpen] = useState(false);
+	const [comments, setComments] = useState([]);
+	const [orders, setOrders] = useState([]);
+	const [commentsOpen, setCommentsOpen] = useState(false);
+	const [notificationsOpen, setNotificationsOpen] = useState(false);
 
-  useEffect(() => {
-    getComments().then((res) => {
-      setComments(res.comments);
-    });
-    getOrders().then((res) => {
-      setOrders(res.products);
-    });
-  }, []);
+	useEffect(() => {
+		getComments().then((res) => {
+			setComments(res.comments);
+		});
+		getOrders().then((res) => {
+			setOrders(res.products);
+		});
+	}, []);
 
-  return (
-    <div className="AppHeader">
-      <Image
-        width={40}
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/2048px-BMW_logo_%28gray%29.svg.png"
-      ></Image>
-      <Typography.Title>Dashboard BIT</Typography.Title>
-      <Space>
-        <Badge count={comments.length} dot>
-          <MailOutlined
-            style={{ fontSize: 24 }}
-            onClick={() => {
-              setCommentsOpen(true);
-            }}
-          />
-        </Badge>
-        <Badge count={orders.length}>
-          <BellFilled
-            style={{ fontSize: 24 }}
-            onClick={() => {
-              setNotificationsOpen(true);
-            }}
-          />
-        </Badge>
-      </Space>
-      <Drawer
-        title="Comments"
-        open={commentsOpen}
-        onClose={() => {
-          setCommentsOpen(false);
-        }}
-        maskClosable
-      >
-        <List
-          dataSource={comments}
-          renderItem={(item) => {
-            return <List.Item>{item.body}</List.Item>;
-          }}
-        ></List>
-      </Drawer>
-      <Drawer
-        title="Notifications"
-        open={notificationsOpen}
-        onClose={() => {
-          setNotificationsOpen(false);
-        }}
-        maskClosable
-      >
-        <List
-          dataSource={orders}
-          renderItem={(item) => {
-            return (
-              <List.Item>
-                <Typography.Text strong>{item.title}</Typography.Text> has been
-                ordered!
-              </List.Item>
-            );
-          }}
-        ></List>
-      </Drawer>
-    </div>
-  );
+	return (
+		<div className="AppHeader">
+			<Image
+				width={40}
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/2048px-BMW_logo_%28gray%29.svg.png"
+			></Image>
+			<Typography.Title>Dashboard BIT</Typography.Title>
+			<Space>
+				<Badge count={comments.length} dot>
+					<MailOutlined
+						style={{ fontSize: 24 }}
+						onClick={() => {
+							setCommentsOpen(true);
+						}}
+					/>
+				</Badge>
+				<Badge count={orders.length}>
+					<BellFilled
+						style={{ fontSize: 24 }}
+						onClick={() => {
+							setNotificationsOpen(true);
+						}}
+					/>
+				</Badge>
+			</Space>
+			<Drawer
+				title="Comments"
+				open={commentsOpen}
+				onClose={() => {
+					setCommentsOpen(false);
+				}}
+				maskClosable
+			>
+				<List
+					dataSource={comments}
+					renderItem={(item) => {
+						return <List.Item>{item.body}</List.Item>;
+					}}
+				></List>
+			</Drawer>
+			<Drawer
+				title="Notifications"
+				open={notificationsOpen}
+				onClose={() => {
+					setNotificationsOpen(false);
+				}}
+				maskClosable
+			>
+				<List
+					dataSource={orders}
+					renderItem={(item) => {
+						return (
+							<List.Item>
+								<Typography.Text strong>{item.title}</Typography.Text> has been
+								ordered!
+							</List.Item>
+						);
+					}}
+				></List>
+			</Drawer>
+		</div>
+	);
 }
 export default AppHeader;
