@@ -20,17 +20,17 @@ function SideMenu () {
       },
 
       {
-        label:"Inventory",
+        label:"Inventario",
         icon: <ShopOutlined/>,
         key:'/inventory',
       },
       {
-        label:"Orders",
+        label:"Ordenes",
         icon: <ShoppingCartOutlined/>,
         key:'/orders',
       },
       {
-        label:"Customers",
+        label:"Clientes",
         icon: <UserOutlined/>,
         key:'/customers',
       },
