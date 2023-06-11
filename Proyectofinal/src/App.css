@@ -2,6 +2,7 @@
 box-sizing: border-box;
 
 }
+
 .App{
   display: flex;
   flex-direction: column;
@@ -45,18 +46,35 @@ background-size: cover;
   align-items: flex-start;
   background-color: rgba(0, 0, 0, 0.05) ;
   background-color: rgb(255, 255, 255);
+ 
 
 }
 .SideMenu{
   height: 100%;  
   border-bottom: solid  rgb(240, 237, 237) 1px;
   border-right: solid  rgb(240, 237, 237) 1px;
+
 }
 .SideMenuVertical{
   height: 100%;
-  
+
 }
 .PageContent{
   padding-left: 12px;
- 
+
 } 
+
+
+
+
+/* Medias query */
+
+/* .spacedash1{
+  display: block;
+  text-align: left;
+} */
+
+ /* .spacedash2{
+display: block;
+border-top: 10px;
+}  */

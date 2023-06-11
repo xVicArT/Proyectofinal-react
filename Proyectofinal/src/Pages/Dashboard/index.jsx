@@ -50,7 +50,7 @@ function Dashboard() {
 	return (
 		<Space size={20} direction="vertical">
 			<Typography.Title level={4}>Dashboard</Typography.Title>
-			<Space direction="horizontal">
+			<Space className="spacedash1" direction="horizontal">
 				<DashboardCard
 					icon={
 						<ShoppingCartOutlined
@@ -100,8 +100,8 @@ function Dashboard() {
 					icon={
 						<DollarCircleOutlined
 							style={{
-								color: "red",
-								backgroundColor: "rgba(255,0,0,0.25)",
+								color: "rgb(238,104,249)",
+								backgroundColor: "rgb(239,251,96)",
 								borderRadius: 20,
 								fontSize: 24,
 								padding: 8,
@@ -112,7 +112,7 @@ function Dashboard() {
 					value={revenue}
 				/>
 			</Space>
-			<Space>
+			<Space className="spacedash2">
 				<RecentOrders />
 				<DashboardChart />
 			</Space>
@@ -144,7 +144,7 @@ function RecentOrders() {
 
 	return (
 		<>
-			<Typography.Text>Ordenes recientes</Typography.Text>
+			<Typography.Title level={5}>Ordenes recientes</Typography.Title>
 			<Table
 				columns={[
 					{
@@ -189,7 +189,7 @@ function DashboardChart() {
 					{
 						label: "Ganancia",
 						data: data,
-						backgroundColor: "rgba(255, 0, 0, 1)",
+						backgroundColor: "rgb(238,104,249)",
 					},
 				],
 			};
@@ -212,7 +212,7 @@ function DashboardChart() {
 	};
 
 	return (
-		<Card style={{ width: AutoComplete, height: AutoComplete}}>
+		<Card style={{ width: 610, height: 300}}>
 			<Bar options={options} data={revenueData} />
 		</Card>
 	);
