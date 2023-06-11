@@ -38,6 +38,7 @@ function SideMenu() {
 						icon: <UserOutlined />,
 						key: "/customers",
 					},
+					
 				]}
 			></Menu>
 		</div>

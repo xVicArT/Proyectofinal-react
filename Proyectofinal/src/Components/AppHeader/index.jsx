@@ -20,11 +20,12 @@ function AppHeader() {
 
 	return (
 		<div className="AppHeader">
-			<Image
-				width={40}
-				src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/2048px-BMW_logo_%28gray%29.svg.png"
-			></Image>
-			<Typography.Title>Dashboard BIT</Typography.Title>
+			<a href="https://bit.institute" rel="noopener noreferrer"target="_blank"><Image
+				width={160}
+				src="https://bit.institute/images/Instituto-Cursos-Programacion.png"
+				
+			></Image></a>
+			<Typography.Title>BIT DASHBOARD</Typography.Title>
 			<Space>
 				<Badge count={comments.length} dot>
 					<MailOutlined
@@ -44,7 +45,7 @@ function AppHeader() {
 				</Badge>
 			</Space>
 			<Drawer
-				title="Comments"
+				title="Comentarios"
 				open={commentsOpen}
 				onClose={() => {
 					setCommentsOpen(false);
@@ -59,7 +60,7 @@ function AppHeader() {
 				></List>
 			</Drawer>
 			<Drawer
-				title="Notifications"
+				title="Notificaciones"
 				open={notificationsOpen}
 				onClose={() => {
 					setNotificationsOpen(false);
@@ -71,8 +72,7 @@ function AppHeader() {
 					renderItem={(item) => {
 						return (
 							<List.Item>
-								<Typography.Text strong>{item.title}</Typography.Text> has been
-								ordered!
+								<Typography.Text strong>{item.title}</Typography.Text> ¡Ha sido ordenado!
 							</List.Item>
 						);
 					}}
