@@ -1,8 +1,13 @@
+*{
+box-sizing: border-box;
+
+}
 .App{
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
   
 }
 .AppHeader{
@@ -40,6 +45,7 @@ background-size: cover;
   align-items: flex-start;
   background-color: rgba(0, 0, 0, 0.05) ;
   background-color: rgb(255, 255, 255);
+
 }
 .SideMenu{
   height: 100%;  
@@ -52,5 +58,5 @@ background-size: cover;
 }
 .PageContent{
   padding-left: 12px;
-  
+ 
 } 
