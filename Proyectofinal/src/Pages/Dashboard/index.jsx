@@ -4,7 +4,7 @@ import {
 	ShoppingOutlined,
 	UserOutlined,
 } from "@ant-design/icons";
-import { gridAutoFlow, AutoComplete, Card, Space, Statistic, Table, Typography } from "antd";
+import { AutoComplete, Card, Space, Statistic, Table, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { getCustomers, getInventory, getOrders, getRevenue } from "../../API";
 
@@ -212,7 +212,7 @@ function DashboardChart() {
 	};
 
 	return (
-		<Card style={{ width: AutoComplete, height: AutoComplete, gridAutoFlow}}>
+		<Card style={{ width: AutoComplete, height: AutoComplete}}>
 			<Bar options={options} data={revenueData} />
 		</Card>
 	);
