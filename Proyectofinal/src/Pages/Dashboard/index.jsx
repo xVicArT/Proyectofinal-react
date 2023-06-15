@@ -4,7 +4,7 @@ import {
 	ShoppingOutlined,
 	UserOutlined,
 } from "@ant-design/icons";
-import { AutoComplete, Card, Space, Statistic, Table, Typography } from "antd";
+import { Card, Space, Statistic, Table, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { getCustomers, getInventory, getOrders, getRevenue } from "../../API";
 
@@ -138,6 +138,7 @@ function RecentOrders() {
 		setLoading(true);
 		getOrders().then((res) => {
 			setDataSource(res.products.splice(0, 3));
+
 			setLoading(false);
 		});
 	}, []);
@@ -157,7 +158,7 @@ function RecentOrders() {
 					},
 					{
 						title: "Precio",
-						dataIndex: "discountedPrice",
+						dataIndex: "price",
 					},
 				]}
 				loading={loading}
@@ -212,7 +213,7 @@ function DashboardChart() {
 	};
 
 	return (
-		<Card style={{ width: 610, height: 300}}>
+		<Card style={{ width: 610, height: 300 }}>
 			<Bar options={options} data={revenueData} />
 		</Card>
 	);
